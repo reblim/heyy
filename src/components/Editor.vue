@@ -32,7 +32,6 @@ export default {
             ['clean'],
           ],
         },
-
         placeholder: 'Start writing...',
         theme: 'snow',
       };
@@ -44,14 +43,14 @@ export default {
 </script>
 
 <style lang="scss">
-/*!
- * Quill Editor v1.3.7
- * https://quilljs.com/
- * Copyright (c) 2014, Jason Chen
- * Copyright (c) 2013, salesforce.com
- */
+/*
+* Snow theme
+*/
 @import 'quill/dist/quill.snow.css';
 
+/*
+* Heyy theme
+*/
 .ql-container {
   &.ql-snow {
     border: none;
