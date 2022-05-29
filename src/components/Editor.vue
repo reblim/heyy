@@ -73,6 +73,12 @@ export default {
   border-radius: 2px;
   margin: 0 1px;
   border: 1px solid #bfbfbf;
+
+  &.ql-active {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #000000;
+  }
 }
 
 @mixin heyyIcon {
@@ -92,6 +98,8 @@ export default {
 }
 
 .ql-container {
+  font-size: 20px;
+
   &.ql-snow {
     border: none;
   }
@@ -242,13 +250,29 @@ export default {
 
 .ql-snow .ql-picker-label {
   &::before {
-    line-height: 34px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
   }
 }
 
 .ql-snow .ql-picker.ql-font .ql-picker-label::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item::before {
   content: 'Sans';
+  font-family: sans-serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='serif']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
+  content: 'Serif';
+  font-family: serif;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='monospace']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
+  content: 'Mono';
+  font-family: monospace;
 }
 
 .ql-snow {
