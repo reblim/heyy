@@ -119,13 +119,23 @@ export default {
   border-left: 1px solid #efefef;
   border-right: 1px solid #efefef;
   caret-color: #404040;
+  font-family: 'Source Sans Pro', sans-serif;
 
   &.ql-blank {
     &::before {
       left: 40px;
       color: #bfbfbf;
       font-weight: normal;
+      font-style: normal;
     }
+  }
+
+  .ql-font-serif {
+    font-family: 'Source Serif Pro', serif;
+  }
+
+  .ql-font-monospace {
+    font-family: 'Source Code Pro', monospace;
   }
 }
 
