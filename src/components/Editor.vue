@@ -136,6 +136,12 @@ export default {
   }
 }
 
+.ql-snow .ql-editor pre.ql-syntax {
+  background-color: #404040;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
 .ql-snow.ql-toolbar {
   .ql-color {
     @include heyyIcon;
