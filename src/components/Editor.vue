@@ -174,6 +174,119 @@ export default {
       }
     }
   }
+
+  .ql-header {
+    .ql-picker-options {
+      // display: flex;
+    }
+
+    .ql-picker-item {
+      @include heyyIcon;
+
+      &:before {
+        content: '\e922';
+      }
+
+      &[data-value='1'] {
+        &:before {
+          content: '\e90a';
+        }
+      }
+
+      &[data-value='2'] {
+        &:before {
+          content: '\e90b';
+        }
+      }
+
+      &[data-value='3'] {
+        &:before {
+          content: '\e90c';
+        }
+      }
+
+      &[data-value='4'] {
+        &:before {
+          content: '\e90d';
+        }
+      }
+
+      &[data-value='5'] {
+        &:before {
+          content: '\e90e';
+        }
+      }
+
+      &[data-value='6'] {
+        &:before {
+          content: '\e90f';
+        }
+      }
+    }
+  }
+}
+
+.ql-snow {
+  .ql-picker {
+    font-size: 24px;
+    height: auto;
+  }
+
+  .ql-picker-label {
+    padding: 0;
+  }
+
+  .ql-picker.ql-header {
+    width: auto;
+
+    .ql-picker-label {
+      @include heyyIcon;
+
+      svg {
+        display: none;
+      }
+
+      &::before {
+        content: '\e922';
+      }
+
+      &[data-value='1'] {
+        &:before {
+          content: '\e90a';
+        }
+      }
+
+      &[data-value='2'] {
+        &:before {
+          content: '\e90b';
+        }
+      }
+
+      &[data-value='3'] {
+        &:before {
+          content: '\e90c';
+        }
+      }
+
+      &[data-value='4'] {
+        &:before {
+          content: '\e90d';
+        }
+      }
+
+      &[data-value='5'] {
+        &:before {
+          content: '\e90e';
+        }
+      }
+
+      &[data-value='6'] {
+        &:before {
+          content: '\e90f';
+        }
+      }
+    }
+  }
 }
 
 .ql-snow.ql-toolbar button {
