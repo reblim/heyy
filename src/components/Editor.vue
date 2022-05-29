@@ -319,19 +319,19 @@ export default {
 .ql-snow .ql-picker.ql-font .ql-picker-label::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item::before {
   content: 'Sans';
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='serif']::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='serif']::before {
   content: 'Serif';
-  font-family: serif;
+  font-family: 'Source Serif Pro', serif;
 }
 
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='monospace']::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='monospace']::before {
   content: 'Mono';
-  font-family: monospace;
+  font-family: 'Source Code Pro', sans-serif;
 }
 
 .ql-snow {
