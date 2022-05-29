@@ -115,19 +115,16 @@ export default {
   position: relative;
   max-width: 838px;
   margin: 0 auto;
-  border: 1px solid #bfbfbf;
+  padding: 40px;
+  border: 1px dashed #bfbfbf;
   border-radius: 4px;
+  caret-color: #404040;
 
   &.ql-blank {
     &::before {
+      left: 40px;
       color: #bfbfbf;
       font-weight: normal;
-    }
-  }
-
-  &.ql-blank {
-    &::before {
-      right: 16px;
     }
   }
 }
