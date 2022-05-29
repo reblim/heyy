@@ -188,12 +188,28 @@ export default {
   }
 
   .ql-header {
-    .ql-picker-options {
-      // @include heyyIconButton;
+    &.ql-expanded {
+      .ql-picker-options {
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+        border-radius: 2px;
+        margin-top: 4px;
+        left: -4px;
+      }
     }
 
     .ql-picker-item {
       @include heyyIcon;
+      margin: 1px 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
 
       &:before {
         content: '\e922';
@@ -201,36 +217,42 @@ export default {
 
       &[data-value='1'] {
         &:before {
+          font-size: 24px;
           content: '\e90a';
         }
       }
 
       &[data-value='2'] {
         &:before {
+          font-size: 24px;
           content: '\e90b';
         }
       }
 
       &[data-value='3'] {
         &:before {
+          font-size: 24px;
           content: '\e90c';
         }
       }
 
       &[data-value='4'] {
         &:before {
+          font-size: 24px;
           content: '\e90d';
         }
       }
 
       &[data-value='5'] {
         &:before {
+          font-size: 24px;
           content: '\e90e';
         }
       }
 
       &[data-value='6'] {
         &:before {
+          font-size: 24px;
           content: '\e90f';
         }
       }
@@ -449,6 +471,10 @@ export default {
 
   &.ql-direction {
     &[value='rtl'] {
+      svg {
+        display: none;
+      }
+
       &::before {
         content: '\e91a';
       }
