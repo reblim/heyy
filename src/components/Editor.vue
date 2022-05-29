@@ -75,6 +75,11 @@ export default {
   margin: 0 1px;
   border: 1px solid #bfbfbf;
 
+  &:hover {
+    background-color: #efefef;
+    color: #404040;
+  }
+
   &.ql-active {
     background-color: #ffffff;
     color: #404040;
@@ -158,6 +163,10 @@ export default {
       border: none;
       background-color: transparent;
 
+      &:hover {
+        background-color: transparent;
+      }
+
       svg {
         display: none;
       }
@@ -175,6 +184,10 @@ export default {
       @include heyyIcon;
       border: none;
       background-color: transparent;
+
+      &:hover {
+        background-color: transparent;
+      }
 
       svg {
         display: none;
