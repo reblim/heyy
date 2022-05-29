@@ -156,6 +156,24 @@ export default {
       }
     }
   }
+
+  .ql-align {
+    @include heyyIcon;
+
+    .ql-picker-label {
+      @include heyyIcon;
+      border: none;
+      background-color: transparent;
+
+      svg {
+        display: none;
+      }
+
+      &::before {
+        content: '\e902';
+      }
+    }
+  }
 }
 
 .ql-snow.ql-toolbar button {
@@ -192,6 +210,92 @@ export default {
   &.ql-strike {
     &::before {
       content: '\e91b';
+    }
+  }
+
+  &.ql-script {
+    &[value='sub'] {
+      &::before {
+        content: '\e91c';
+      }
+    }
+
+    &[value='super'] {
+      &::before {
+        content: '\e91d';
+      }
+    }
+  }
+
+  &.ql-blockquote {
+    &::before {
+      content: '\e919';
+    }
+  }
+
+  &.ql-code-block {
+    &::before {
+      content: '\e907';
+    }
+  }
+
+  &.ql-list {
+    &[value='ordered'] {
+      &::before {
+        content: '\e914';
+      }
+    }
+
+    &[value='bullet'] {
+      &::before {
+        content: '\e915';
+      }
+    }
+  }
+
+  &.ql-indent {
+    &[value='+1'] {
+      &::before {
+        content: '\e911';
+      }
+    }
+
+    &[value='-1'] {
+      &::before {
+        content: '\e918';
+      }
+    }
+  }
+
+  &.ql-link {
+    &::before {
+      content: '\e913';
+    }
+  }
+
+  &.ql-image {
+    &::before {
+      content: '\e910';
+    }
+  }
+
+  &.ql-video {
+    &::before {
+      content: '\e91f';
+    }
+  }
+
+  &.ql-direction {
+    &[value='rtl'] {
+      &::before {
+        content: '\e91a';
+      }
+    }
+  }
+
+  &.ql-clean {
+    &::before {
+      content: '\e906';
     }
   }
 }
