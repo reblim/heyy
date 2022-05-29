@@ -9,7 +9,7 @@ export default {
   name: 'Editor-C',
 
   mounted() {
-    this.init();
+    return this.init();
   },
 
   methods: {
@@ -112,6 +112,13 @@ export default {
   margin: 0 auto;
   border: 1px solid #bfbfbf;
   border-radius: 4px;
+
+  &.ql-blank {
+    &::before {
+      color: #bfbfbf;
+      font-weight: normal;
+    }
+  }
 
   &.ql-blank {
     &::before {
