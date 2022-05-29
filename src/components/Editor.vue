@@ -62,10 +62,21 @@ export default {
 * Heyy theme
 */
 
-@mixin heyyIcon {
+@mixin heyyIconButton {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  color: #404040;
+  background-color: #dfdfdf;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  margin: 0 1px;
+  border: 1px solid #bfbfbf;
+}
+
+@mixin heyyIcon {
+  @include heyyIconButton;
   font-family: 'heyy-icons' !important;
   font-size: 24px;
   speak: never;
@@ -74,13 +85,6 @@ export default {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  color: #404040;
-  background-color: #dfdfdf;
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
-  margin: 0 1px;
-  border: 1px solid #bfbfbf;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
@@ -177,7 +181,7 @@ export default {
 
   .ql-header {
     .ql-picker-options {
-      // display: flex;
+      // @include heyyIconButton;
     }
 
     .ql-picker-item {
@@ -224,6 +228,27 @@ export default {
       }
     }
   }
+}
+
+.ql-snow .ql-picker.ql-font {
+  @include heyyIconButton;
+  width: 80px;
+  text-align: center;
+
+  svg {
+    display: none;
+  }
+}
+
+.ql-snow .ql-picker-label {
+  &::before {
+    line-height: 34px;
+  }
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item::before {
+  content: 'Sans';
 }
 
 .ql-snow {
