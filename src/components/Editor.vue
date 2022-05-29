@@ -116,8 +116,8 @@ export default {
   max-width: 838px;
   margin: 0 auto;
   padding: 40px;
-  border: 1px dashed #bfbfbf;
-  border-radius: 4px;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
   caret-color: #404040;
 
   &.ql-blank {
