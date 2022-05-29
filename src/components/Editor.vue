@@ -36,7 +36,8 @@ export default {
         theme: 'snow',
       };
 
-      return new Quill(this.$el, options);
+      const editor = new Quill(this.$el, options);
+      return editor.focus();
     },
   },
 };
@@ -76,8 +77,8 @@ export default {
 
   &.ql-active {
     background-color: #ffffff;
-    color: #000000;
-    border-color: #000000;
+    color: #404040;
+    border-color: #404040;
   }
 }
 
@@ -109,7 +110,8 @@ export default {
   position: relative;
   max-width: 838px;
   margin: 0 auto;
-  border: 2px solid red;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
 
   &.ql-blank {
     &::before {
@@ -125,6 +127,8 @@ export default {
 
   &.ql-snow {
     border: none;
+    padding: 0;
+    margin: 40px 16px;
 
     .ql-formats {
       margin-right: 0;
