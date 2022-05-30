@@ -101,6 +101,19 @@ export default {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  svg {
+    display: none;
+  }
+}
+
+@mixin optionsDropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border-radius: 2px;
+  margin-top: 4px;
+  left: -4px;
 }
 
 .ql-container {
@@ -176,10 +189,6 @@ export default {
         background-color: transparent;
       }
 
-      svg {
-        display: none;
-      }
-
       &::before {
         content: '\e908';
       }
@@ -198,10 +207,6 @@ export default {
         background-color: transparent;
       }
 
-      svg {
-        display: none;
-      }
-
       &::before {
         content: '\e904';
       }
@@ -216,12 +221,40 @@ export default {
       border: none;
       background-color: transparent;
 
-      svg {
-        display: none;
+      &:hover {
+        border: none;
+        background-color: transparent;
       }
 
       &::before {
         content: '\e902';
+      }
+
+      &[data-value='center'] {
+        border: none;
+        background-color: transparent;
+        &:before {
+          font-size: 24px;
+          content: '\e900';
+        }
+      }
+
+      &[data-value='right'] {
+        border: none;
+        background-color: transparent;
+        &:before {
+          font-size: 24px;
+          content: '\e903';
+        }
+      }
+
+      &[data-value='justify'] {
+        border: none;
+        background-color: transparent;
+        &:before {
+          font-size: 24px;
+          content: '\e901';
+        }
       }
     }
   }
@@ -229,12 +262,7 @@ export default {
   .ql-header {
     &.ql-expanded {
       .ql-picker-options {
-        display: flex;
-        flex-direction: column;
-        padding: 4px;
-        border-radius: 2px;
-        margin-top: 4px;
-        left: -4px;
+        @include optionsDropdown;
       }
     }
 
@@ -297,16 +325,58 @@ export default {
       }
     }
   }
+
+  .ql-align {
+    &.ql-expanded {
+      .ql-picker-options {
+        @include optionsDropdown;
+      }
+    }
+
+    .ql-picker-item {
+      @include heyyIcon;
+      margin: 1px 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '\e902';
+      }
+
+      &[data-value='center'] {
+        &:before {
+          font-size: 24px;
+          content: '\e900';
+        }
+      }
+
+      &[data-value='right'] {
+        &:before {
+          font-size: 24px;
+          content: '\e903';
+        }
+      }
+
+      &[data-value='justify'] {
+        &:before {
+          font-size: 24px;
+          content: '\e901';
+        }
+      }
+    }
+  }
 }
 
 .ql-snow .ql-picker.ql-font {
   @include heyyIconButton;
   width: 80px;
   text-align: center;
-
-  svg {
-    display: none;
-  }
 }
 
 .ql-snow .ql-picker-label {
@@ -351,10 +421,6 @@ export default {
 
     .ql-picker-label {
       @include heyyIcon;
-
-      svg {
-        display: none;
-      }
 
       &::before {
         content: '\e922';
@@ -401,10 +467,6 @@ export default {
 
 .ql-snow.ql-toolbar button {
   @include heyyIcon;
-
-  svg {
-    display: none;
-  }
 
   &.ql-bold {
     &::before {
@@ -510,10 +572,6 @@ export default {
 
   &.ql-direction {
     &[value='rtl'] {
-      svg {
-        display: none;
-      }
-
       &::before {
         content: '\e91a';
       }
