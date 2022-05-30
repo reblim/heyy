@@ -69,8 +69,8 @@ export default {
   align-items: center;
   color: #404040;
   background-color: #dfdfdf;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 2px;
   margin: 0 1px;
   border: 1px solid #bfbfbf;
@@ -90,7 +90,7 @@ export default {
 @mixin heyyIcon {
   @include heyyIconButton;
   font-family: 'heyy-icons' !important;
-  font-size: 24px;
+  font-size: 20px;
   speak: never;
   font-style: normal;
   font-weight: normal;
