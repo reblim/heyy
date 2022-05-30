@@ -120,6 +120,8 @@ export default {
   border-right: 1px solid #efefef;
   caret-color: #404040;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
 
   &.ql-blank {
     &::before {
