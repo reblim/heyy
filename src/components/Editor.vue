@@ -9,7 +9,7 @@ export default {
   name: 'Editor-C',
 
   mounted() {
-    return this.init();
+    this.init();
   },
 
   methods: {
@@ -20,6 +20,7 @@ export default {
         modules: {
           toolbar: [
             [{ font: [] }],
+            ['small'],
             [{ header: [1, 2, 3, 4, 5, 6, false] }],
             ['bold', 'italic', 'underline', 'strike'],
             [{ color: [] }, { background: [] }],
@@ -36,7 +37,28 @@ export default {
         theme: 'snow',
       };
 
+      const Inline = Quill.import('blots/inline');
+
+      class SmallText extends Inline {
+        static create() {
+          return super.create();
+        }
+      }
+
+      SmallText.blotName = 'small';
+      SmallText.tagName = 'small';
+      Quill.register(SmallText);
+
       const editor = new Quill(this.$el, options);
+
+      setTimeout(() => {
+        const spanBlockButton = document.querySelector('.ql-small');
+        spanBlockButton.addEventListener('click', () => {
+          const range = editor.getSelection();
+          if (range) editor.formatText(range, 'small');
+        });
+      });
+
       return editor.focus();
     },
   },
@@ -44,6 +66,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../scss/mixins';
+
 @font-face {
   font-family: 'heyy-icons';
   src: url('../assets/fonts/heyy-icons.ttf') format('truetype'),
@@ -90,7 +114,7 @@ export default {
 @mixin heyyIcon {
   @include heyyIconButton;
   font-family: 'heyy-icons' !important;
-  font-size: 20px;
+  font-size: var(--font-size-icons);
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -117,11 +141,13 @@ export default {
 }
 
 .ql-container {
-  font-size: 20px;
-
   &.ql-snow {
     border: none;
   }
+}
+
+.ql-snow .ql-editor {
+  @include fontSize;
 }
 
 .ql-editor {
@@ -133,7 +159,6 @@ export default {
   border-right: 1px solid #efefef;
   caret-color: #404040;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 20px;
   line-height: 1.5;
 
   &.ql-blank {
@@ -177,6 +202,13 @@ export default {
 }
 
 .ql-snow.ql-toolbar {
+  .ql-small {
+    &:before {
+      content: '\e922';
+      font-size: var(--font-size-text-small);
+    }
+  }
+
   .ql-color {
     @include heyyIcon;
 
@@ -234,7 +266,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e900';
         }
       }
@@ -243,7 +275,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e903';
         }
       }
@@ -252,7 +284,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e901';
         }
       }
@@ -284,42 +316,42 @@ export default {
 
       &[data-value='1'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90a';
         }
       }
 
       &[data-value='2'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90b';
         }
       }
 
       &[data-value='3'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90c';
         }
       }
 
       &[data-value='4'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90d';
         }
       }
 
       &[data-value='5'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90e';
         }
       }
 
       &[data-value='6'] {
         &:before {
-          font-size: 24px;
+          font-size: var(--font-size-icons);
           content: '\e90f';
         }
       }
@@ -351,21 +383,18 @@ export default {
 
       &[data-value='center'] {
         &:before {
-          font-size: 24px;
           content: '\e900';
         }
       }
 
       &[data-value='right'] {
         &:before {
-          font-size: 24px;
           content: '\e903';
         }
       }
 
       &[data-value='justify'] {
         &:before {
-          font-size: 24px;
           content: '\e901';
         }
       }
@@ -380,6 +409,10 @@ export default {
 }
 
 .ql-snow .ql-picker-label {
+  svg {
+    display: none !important;
+  }
+
   &::before {
     display: inline-flex;
     justify-content: center;
@@ -408,7 +441,8 @@ export default {
 
 .ql-snow {
   .ql-picker {
-    font-size: 24px;
+    font-size: var(--font-size-icons);
+
     height: auto;
   }
 
