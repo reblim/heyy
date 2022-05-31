@@ -26,6 +26,7 @@ export default {
             'italic',
             'underline',
             'strike',
+            'mark',
             { color: ['#404040', '#303030', '#202020', '#101010', '#000000'] },
             {
               background: [
@@ -45,11 +46,10 @@ export default {
             { indent: '-1' },
             { indent: '+1' },
             { align: [] },
+            { direction: 'rtl' },
             'link',
             'image',
             'video',
-            { direction: 'rtl' },
-            'mark',
             'clean',
           ],
         },
@@ -525,6 +525,17 @@ export default {
   &:last-of-type {
     margin-right: 0;
   }
+}
+
+.ql-toolbar.ql-snow .ql-size.ql-picker.ql-expanded .ql-picker-options,
+.ql-toolbar.ql-snow .ql-color.ql-picker.ql-expanded .ql-picker-options,
+.ql-toolbar.ql-snow .ql-background.ql-picker.ql-expanded .ql-picker-options,
+.ql-toolbar.ql-snow .ql-align.ql-picker.ql-expanded .ql-picker-options {
+  left: -1px;
+}
+
+.ql-toolbar.ql-snow .ql-header.ql-picker.ql-expanded .ql-picker-options {
+  left: 1px;
 }
 
 .ql-snow.ql-toolbar .ql-color .ql-picker-label.ql-active,
