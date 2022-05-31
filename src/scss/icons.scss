@@ -24,6 +24,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.heyy-icon-check:before {
+  content: '\e924';
+}
+
+.heyy-icon-cross:before {
+  content: '\e925';
+}
+
+.heyy-icon-pencil:before {
+  content: '\e926';
+}
+
 .heyy-icon-mark:before {
   content: '\e923';
 }
