@@ -116,7 +116,7 @@ export default {
   width: var(--size-90);
   height: var(--size-90);
   border-radius: var(--size-20);
-  margin: 0 var(--size-10);
+  margin: 0 var(--size-20);
   border: var(--size-10) solid var(--color-disabled);
 
   &:hover {
@@ -544,6 +544,18 @@ export default {
 .ql-snow.ql-toolbar .ql-background .ql-picker-label.ql-active {
   width: calc(100% - var(--size-10));
   height: calc(100% - var(--size-10));
+}
+
+.ql-snow .ql-picker-options {
+  background-color: var(--color-background-primary);
+}
+
+.ql-toolbar.ql-snow .ql-picker-options {
+  box-shadow: none;
+}
+
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  border: var(--size-10) solid var(--color-disabled);
 }
 
 .ql-snow .ql-tooltip {

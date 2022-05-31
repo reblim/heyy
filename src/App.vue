@@ -7,7 +7,7 @@ export default {
   name: 'App',
 
   mounted() {
-    document.querySelector('html').classList.add('dark');
+    // document.querySelector('html').classList.add('dark');
   },
 };
 </script>
