@@ -7,7 +7,7 @@ export default {
   name: 'App',
 
   mounted() {
-    document.querySelector('html').classList.add('dark');
+    // document.querySelector('html').classList.add('dark');
   },
 };
 </script>
@@ -17,7 +17,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+Pro:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap');
 
 html {
-  background-color: var(--color-background-primary);
+  background-color: var(--color-background-tertiary);
   color: var(--color-contrast-lowest);
 }
 
@@ -30,7 +30,7 @@ body {
   }
 
   ::selection {
-    background-color: var(--color-background-tertiary);
+    background-color: var(--color-background-primary);
   }
 }
 
