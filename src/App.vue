@@ -2,11 +2,23 @@
   <router-view class="app" />
 </template>
 
-<style lang="scss" scoped>
+<script>
+export default {
+  name: 'App',
+
+  mounted() {
+    document.querySelector('html').classList.add('dark');
+  },
+};
+</script>
+
+<style lang="scss">
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+Pro:wght@400;600&family=Source+Serif+Pro:wght@400;600&display=swap');
 
 html {
+  background-color: var(--color-background-primary);
+  color: var(--color-contrast-lowest);
 }
 
 body {

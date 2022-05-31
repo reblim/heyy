@@ -544,6 +544,32 @@ export default {
   height: calc(100% - var(--size-10));
 }
 
+.ql-snow .ql-tooltip {
+  border-radius: 2px;
+  padding: 4px;
+}
+
+.ql-snow .ql-tooltip.ql-flip {
+  transform: translateY(0);
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+}
+
+.ql-snow .ql-tooltip.ql-editing input[type='text'] {
+  display: inline-flex;
+}
+
+.ql-snow .ql-picker-label::before {
+  line-height: 1;
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+  @include heyyIcon;
+  content: '\e924';
+  margin: 0;
+}
+
 .ql-snow {
   .ql-picker {
     font-size: var(--font-size-icon);
