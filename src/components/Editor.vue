@@ -113,8 +113,8 @@ export default {
   align-items: center;
   color: var(--color-contrast-lowest);
   background-color: var(--color-background-tertiary);
-  width: var(--size-90);
-  height: var(--size-90);
+  width: var(--size-100);
+  height: var(--size-100);
   border-radius: var(--size-20);
   margin: 0 var(--size-20);
   border: var(--size-10) solid var(--color-disabled);
