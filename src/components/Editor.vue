@@ -20,8 +20,8 @@ export default {
         modules: {
           toolbar: [
             { font: [] },
-            'small',
-            { header: [1, 2, 3, 4, 5, 6, false] },
+            { size: ['small', false] },
+            { header: [1, 2, 3, 4, 5, 6] },
             'bold',
             'italic',
             'underline',
@@ -41,6 +41,7 @@ export default {
             'image',
             'video',
             { direction: 'rtl' },
+            'mark',
             'clean',
           ],
         },
@@ -50,23 +51,23 @@ export default {
 
       const Inline = Quill.import('blots/inline');
 
-      class SmallText extends Inline {
+      class MarkedText extends Inline {
         static create() {
           return super.create();
         }
       }
 
-      SmallText.blotName = 'small';
-      SmallText.tagName = 'small';
-      Quill.register(SmallText);
+      MarkedText.blotName = 'mark';
+      MarkedText.tagName = 'mark';
+      Quill.register(MarkedText);
 
       const editor = new Quill(this.$el, options);
 
       setTimeout(() => {
-        const spanBlockButton = document.querySelector('.ql-small');
+        const spanBlockButton = document.querySelector('.ql-mark');
         spanBlockButton.addEventListener('click', () => {
           const range = editor.getSelection();
-          if (range) editor.formatText(range, 'small');
+          if (range) editor.formatText(range, 'mark');
         });
       });
 
@@ -190,6 +191,10 @@ export default {
   .ql-font-monospace {
     font-family: 'Source Code Pro', monospace;
   }
+
+  .ql-size-small {
+    font-size: var(--font-size-text-small);
+  }
 }
 
 .ql-toolbar {
@@ -225,10 +230,9 @@ export default {
 }
 
 .ql-snow.ql-toolbar {
-  .ql-small {
+  .ql-mark {
     &:before {
-      content: '\e922';
-      font-size: var(--font-size-text-small);
+      content: '\e923';
     }
   }
 
@@ -264,6 +268,34 @@ export default {
 
       &::before {
         content: '\e904';
+      }
+    }
+  }
+
+  .ql-size {
+    @include heyyIcon;
+
+    .ql-picker-label {
+      @include heyyIcon;
+      border: none;
+      background-color: transparent;
+
+      &:hover {
+        border: none;
+        background-color: transparent;
+      }
+
+      &:before {
+        content: '\e922';
+      }
+
+      &[data-value='small'] {
+        border: none;
+        background-color: transparent;
+        &:before {
+          font-size: var(--font-size-text-small);
+          content: '\e922';
+        }
       }
     }
   }
@@ -327,10 +359,6 @@ export default {
         margin-bottom: 0;
       }
 
-      &:before {
-        content: '\e922';
-      }
-
       &[data-value='1'] {
         &:before {
           font-size: var(--font-size-icons);
@@ -370,6 +398,32 @@ export default {
         &:before {
           font-size: var(--font-size-icons);
           content: '\e90f';
+        }
+      }
+    }
+  }
+
+  .ql-size {
+    .ql-picker-item {
+      @include heyyIcon;
+      margin: 1px 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        content: '\e922';
+      }
+
+      &[data-value='small'] {
+        &:before {
+          content: '\e922';
+          font-size: var(--font-size-text-small);
         }
       }
     }
