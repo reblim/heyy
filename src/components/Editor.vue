@@ -26,8 +26,16 @@ export default {
             'italic',
             'underline',
             'strike',
-            { color: [] },
-            { background: [] },
+            { color: ['#404040', '#303030', '#202020', '#101010', '#000000'] },
+            {
+              background: [
+                '#bfbfbf',
+                '#cfcfcf',
+                '#dfdfdf',
+                '#efefef',
+                '#ffffff',
+              ],
+            },
             { script: 'sub' },
             { script: 'super' },
             'blockquote',
@@ -103,30 +111,31 @@ export default {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  color: #404040;
-  background-color: #dfdfdf;
-  width: 32px;
-  height: 32px;
-  border-radius: 2px;
-  margin: 0 1px;
-  border: 1px solid #bfbfbf;
+  color: var(--color-contrast-lowest);
+  background-color: var(--color-background-tertiary);
+  width: var(--size-90);
+  height: var(--size-90);
+  border-radius: var(--size-20);
+  margin: 0 var(--size-10);
+  border: var(--size-10) solid var(--color-disabled);
 
   &:hover {
-    background-color: #efefef;
-    color: #404040;
+    background-color: var(--color-background-secondary);
+    color: var(--color-contrast-lowest);
+    border-color: var(--color-contrast-highest);
   }
 
   &.ql-active {
-    background-color: #ffffff;
-    color: #404040;
-    border-color: #404040;
+    background-color: var(--color-background-primary);
+    color: var(--color-contrast-lowest);
+    border-color: var(--color-contrast-lowest);
   }
 }
 
 @mixin heyyIcon {
   @include heyyIconButton;
   font-family: 'heyy-icons' !important;
-  font-size: var(--font-size-icons);
+  font-size: var(--font-size-icon);
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -144,14 +153,17 @@ export default {
 }
 
 @mixin optionsDropdown {
-  display: flex;
-  flex-direction: column;
-  padding: 4px;
-  border-radius: 2px;
-  margin-bottom: 4px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: var(--size-20);
+  border-radius: var(--size-20);
+  margin-bottom: var(--size-30);
   top: initial;
   bottom: 100%;
-  left: -4px;
+  left: 0;
+  right: initial;
+  width: initial;
 }
 
 .ql-container {
@@ -169,16 +181,16 @@ export default {
   max-width: 838px;
   margin: 40px auto 0;
   padding: 40px;
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
-  caret-color: #404040;
+  border-left: var(--size-10) solid var(--color-background-secondary);
+  border-right: var(--size-10) solid var(--color-background-secondary);
+  caret-color: var(--color-contrast-lowest);
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
 
   &.ql-blank {
     &::before {
       left: 40px;
-      color: #bfbfbf;
+      color: var(--color-disabled);
       font-weight: normal;
       font-style: normal;
     }
@@ -218,9 +230,9 @@ export default {
 }
 
 .ql-snow .ql-editor pre.ql-syntax {
-  background-color: #404040;
-  padding: 4px 8px;
-  border-radius: 4px;
+  background-color: var(--color-contrast-lowest);
+  padding: var(--size-30) 8px;
+  border-radius: var(--size-30);
 }
 
 .ql-snow .ql-picker.ql-expanded {
@@ -321,7 +333,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e900';
         }
       }
@@ -330,7 +342,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e903';
         }
       }
@@ -339,7 +351,7 @@ export default {
         border: none;
         background-color: transparent;
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e901';
         }
       }
@@ -349,54 +361,53 @@ export default {
   .ql-header {
     .ql-picker-item {
       @include heyyIcon;
-      margin: 1px 0;
 
       &:first-of-type {
-        margin-top: 0;
+        margin-left: 0;
       }
 
       &:last-of-type {
-        margin-bottom: 0;
+        margin-right: 0;
       }
 
       &[data-value='1'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90a';
         }
       }
 
       &[data-value='2'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90b';
         }
       }
 
       &[data-value='3'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90c';
         }
       }
 
       &[data-value='4'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90d';
         }
       }
 
       &[data-value='5'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90e';
         }
       }
 
       &[data-value='6'] {
         &:before {
-          font-size: var(--font-size-icons);
+          font-size: var(--font-size-icon);
           content: '\e90f';
         }
       }
@@ -406,14 +417,13 @@ export default {
   .ql-size {
     .ql-picker-item {
       @include heyyIcon;
-      margin: 1px 0;
 
       &:first-of-type {
-        margin-top: 0;
+        margin-left: 0;
       }
 
       &:last-of-type {
-        margin-bottom: 0;
+        margin-right: 0;
       }
 
       &:before {
@@ -432,14 +442,13 @@ export default {
   .ql-align {
     .ql-picker-item {
       @include heyyIcon;
-      margin: 1px 0;
 
       &:first-of-type {
-        margin-top: 0;
+        margin-left: 0;
       }
 
       &:last-of-type {
-        margin-bottom: 0;
+        margin-right: 0;
       }
 
       &:before {
@@ -504,9 +513,29 @@ export default {
   font-family: 'Source Code Pro', sans-serif;
 }
 
+.ql-snow .ql-color-picker.ql-color .ql-picker-item,
+.ql-snow .ql-color-picker.ql-background .ql-picker-item {
+  @include heyyIcon;
+  border-radius: 100%;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.ql-snow.ql-toolbar .ql-color .ql-picker-label.ql-active,
+.ql-snow.ql-toolbar .ql-background .ql-picker-label.ql-active {
+  width: calc(100% - var(--size-10));
+  height: calc(100% - var(--size-10));
+}
+
 .ql-snow {
   .ql-picker {
-    font-size: var(--font-size-icons);
+    font-size: var(--font-size-icon);
 
     height: auto;
   }
@@ -520,6 +549,7 @@ export default {
 
     .ql-picker-label {
       @include heyyIcon;
+      font-size: var(--font-size-icon-large);
 
       &::before {
         content: '\e922';
