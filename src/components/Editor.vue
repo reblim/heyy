@@ -230,9 +230,11 @@ export default {
 }
 
 .ql-snow .ql-editor pre.ql-syntax {
-  background-color: var(--color-contrast-lowest);
+  background-color: var(--color-background-tertiary);
+  color: var(--color-contrast-lowest);
   padding: var(--size-30) 8px;
   border-radius: var(--size-30);
+  font-size: var(--font-size-text-small);
 }
 
 .ql-snow .ql-picker.ql-expanded {

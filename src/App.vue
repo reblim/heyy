@@ -28,6 +28,10 @@ body {
   * {
     box-sizing: inherit;
   }
+
+  ::selection {
+    background-color: var(--color-background-tertiary);
+  }
 }
 
 .app {
