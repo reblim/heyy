@@ -19,18 +19,29 @@ export default {
         // readOnly: true,
         modules: {
           toolbar: [
-            [{ font: [] }],
-            ['small'],
-            [{ header: [1, 2, 3, 4, 5, 6, false] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ color: [] }, { background: [] }],
-            [{ script: 'sub' }, { script: 'super' }],
-            ['blockquote', 'code-block'],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            [{ indent: '-1' }, { indent: '+1' }, { align: [] }],
-            ['link', 'image', 'video'],
-            [{ direction: 'rtl' }],
-            ['clean'],
+            { font: [] },
+            'small',
+            { header: [1, 2, 3, 4, 5, 6, false] },
+            'bold',
+            'italic',
+            'underline',
+            'strike',
+            { color: [] },
+            { background: [] },
+            { script: 'sub' },
+            { script: 'super' },
+            'blockquote',
+            'code-block',
+            { list: 'ordered' },
+            { list: 'bullet' },
+            { indent: '-1' },
+            { indent: '+1' },
+            { align: [] },
+            'link',
+            'image',
+            'video',
+            { direction: 'rtl' },
+            'clean',
           ],
         },
         placeholder: 'Start writing...',
@@ -136,7 +147,9 @@ export default {
   flex-direction: column;
   padding: 4px;
   border-radius: 2px;
-  margin-top: 4px;
+  margin-bottom: 4px;
+  top: initial;
+  bottom: 100%;
   left: -4px;
 }
 
@@ -153,7 +166,7 @@ export default {
 .ql-editor {
   position: relative;
   max-width: 838px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   padding: 40px;
   border-left: 1px solid #efefef;
   border-right: 1px solid #efefef;
@@ -183,11 +196,15 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0 16px;
 
   &.ql-snow {
     border: none;
     padding: 0;
-    margin: 40px 16px;
+    margin: 40px 0;
 
     .ql-formats {
       margin-right: 0;
@@ -199,6 +216,12 @@ export default {
   background-color: #404040;
   padding: 4px 8px;
   border-radius: 4px;
+}
+
+.ql-snow .ql-picker.ql-expanded {
+  .ql-picker-options {
+    @include optionsDropdown;
+  }
 }
 
 .ql-snow.ql-toolbar {
@@ -292,12 +315,6 @@ export default {
   }
 
   .ql-header {
-    &.ql-expanded {
-      .ql-picker-options {
-        @include optionsDropdown;
-      }
-    }
-
     .ql-picker-item {
       @include heyyIcon;
       margin: 1px 0;
@@ -359,12 +376,6 @@ export default {
   }
 
   .ql-align {
-    &.ql-expanded {
-      .ql-picker-options {
-        @include optionsDropdown;
-      }
-    }
-
     .ql-picker-item {
       @include heyyIcon;
       margin: 1px 0;
