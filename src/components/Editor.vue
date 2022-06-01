@@ -178,14 +178,13 @@ export default {
 
 .ql-editor {
   position: relative;
-  max-width: 700px;
+  max-width: 728px;
   margin: 40px auto 0;
   padding: 40px;
   // border-left: var(--size-10) solid var(--color-background-secondary);
   // border-right: var(--size-10) solid var(--color-background-secondary);
   caret-color: var(--color-contrast-lowest);
   font-family: 'Source Sans Pro', sans-serif;
-  line-height: 1.5;
 
   &.ql-blank {
     &::before {
