@@ -181,8 +181,8 @@ export default {
   max-width: 700px;
   margin: 40px auto 0;
   padding: 40px;
-  border-left: var(--size-10) solid var(--color-background-secondary);
-  border-right: var(--size-10) solid var(--color-background-secondary);
+  // border-left: var(--size-10) solid var(--color-background-secondary);
+  // border-right: var(--size-10) solid var(--color-background-secondary);
   caret-color: var(--color-contrast-lowest);
   font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.5;
