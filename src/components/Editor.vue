@@ -178,7 +178,7 @@ export default {
 
 .ql-editor {
   position: relative;
-  max-width: 838px;
+  max-width: 700px;
   margin: 40px auto 0;
   padding: 40px;
   border-left: var(--size-10) solid var(--color-background-secondary);
@@ -568,6 +568,10 @@ export default {
 }
 
 .ql-snow .ql-tooltip a.ql-action::after {
+}
+
+.ql-snow .ql-picker.ql-expanded.ql-font .ql-picker-options {
+  flex-direction: column;
 }
 
 .ql-snow .ql-tooltip.ql-editing input[type='text'] {
